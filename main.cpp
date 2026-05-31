@@ -38,3 +38,22 @@ public:
 };
 
 const int maks = 100;
+
+class Pengeluaran {
+public:
+    string keterangan[maks];
+    double jumlah[maks];
+    int jumlahData;
+    double totalJumlah;
+
+    Pengeluaran() : jumlahData(0), totalJumlah(0) {}
+
+    void tambah(string ket, double jml) {
+        if (jumlahData >= maks) return;
+
+        keterangan[jumlahData] = ket;
+        jumlah[jumlahData] = jml;
+        totalJumlah += jml;
+        jumlahData++;
+    }
+};
