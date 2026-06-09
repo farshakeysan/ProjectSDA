@@ -1,5 +1,5 @@
-#include "pengeluaran.h"
-#include "tampilan.h"
+#include "pengeluaran(key).h"
+#include "tampilan(fafa).h"
 #include <iostream>
 using namespace std;
 

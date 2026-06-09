@@ -1,5 +1,5 @@
-#include "pemasukan.h"
-#include "tampilan.h"
+#include "pemasukan(dimas).h"
+#include "tampilan(fafa).h"
 #include <iostream>
 using namespace std;
 

@@ -1,6 +1,6 @@
-#include "tampilan.h"
-#include "pemasukan.h"
-#include "pengeluaran.h"
+#include "tampilan(fafa).h"
+#include "pemasukan(dimas).h"
+#include "pengeluaran(key).h"
 #include <iostream>
 using namespace std;
 
