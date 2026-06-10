@@ -33,46 +33,43 @@ int inputJumlah(double& hasil) {
 void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
     cetakJudul("LAPORAN KEUANGAN");
 
-    cout << "  PEMASUKAN\n";
-    cout << "  --------------------------------\n";
+    cout << "  === PEMASUKAN ===\n";
     if (dataPemasukan.jumlahData == 0) {
-        cout << "  Belum ada data pemasukan.\n";
+        cout << "  Tidak ada data pemasukan.\n";
     } else {
         for (int i = 0; i < dataPemasukan.jumlahData; i++) {
-            cout << "  " << i + 1 << ". "
-                << dataPemasukan.data[i].keterangan
-                << " | " << dataPemasukan.data[i].hari
-                << " | Rp " << (long long)dataPemasukan.data[i].jumlah << "\n";
+            int no = i + 1;
+            string ket = dataPemasukan.data[i].keterangan;
+            string hr  = dataPemasukan.data[i].hari;
+            long long jml = (long long)dataPemasukan.data[i].jumlah;
+            cout << "  " << no << ". " << ket << " | " << hr << " | Rp " << jml << "\n";
         }
-        cout << "  Total Pemasukan  : Rp " << (long long)dataPemasukan.totalJumlah << "\n";
+        long long totalP = (long long)dataPemasukan.totalJumlah;
+        cout << "  Total : Rp " << totalP << "\n";
     }
 
     cout << "\n";
 
-    // Struk Pengeluaran
-    cout << "  PENGELUARAN\n";
-    cout << "  --------------------------------\n";
+    cout << "  === PENGELUARAN ===\n";
     if (dataPengeluaran.jumlahData == 0) {
-        cout << "  Belum ada data pengeluaran.\n";
+        cout << "  Tidak ada data pengeluaran.\n";
     } else {
         for (int i = 0; i < dataPengeluaran.jumlahData; i++) {
-            cout << "  " << i + 1 << ". "
-                << dataPengeluaran.data[i].keterangan
-                << " | " << dataPengeluaran.data[i].hari
-                << " | Rp " << (long long)dataPengeluaran.data[i].jumlah << "\n";
+            int no = i + 1;
+            string ket = dataPengeluaran.data[i].keterangan;
+            string hr  = dataPengeluaran.data[i].hari;
+            long long jml = (long long)dataPengeluaran.data[i].jumlah;
+            cout << "  " << no << ". " << ket << " | " << hr << " | Rp " << jml << "\n";
         }
-        cout << "  Total Pengeluaran: Rp " << (long long)dataPengeluaran.totalJumlah << "\n";
+        long long totalK = (long long)dataPengeluaran.totalJumlah;
+        cout << "  Total : Rp " << totalK << "\n";
     }
 
-    // Saldo
-    double saldo = dataPemasukan.totalJumlah - dataPengeluaran.totalJumlah;
+    double selisih = dataPemasukan.totalJumlah - dataPengeluaran.totalJumlah;
+    string kondisi = (selisih < 0) ? "Keuangan tidak sehat" : "Keuangan dalam kondisi normal";
+
     cout << "\n  ================================\n";
-    cout << "  Saldo              : Rp " << (long long)saldo << "\n";
-
-    if (saldo < 0)
-        cout << "  Status             : Keuangan tidak sehat\n";
-    else
-        cout << "  Status             : Keuangan dalam kondisi normal\n";
-
+    cout << "  Saldo  : Rp " << (long long)selisih << "\n";
+    cout << "  Status : " << kondisi << "\n";
     cout << "  ================================\n\n";
 }
