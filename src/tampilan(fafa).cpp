@@ -1,4 +1,4 @@
-#include "tampilan(fafa).h"
+#include "../include/tampilan(fafa).h"
 #include <iostream>
 using namespace std;
 

@@ -15,7 +15,7 @@ int main() {
 
         cout << "  1. Pemasukan\n";
         cout << "  2. Pengeluaran\n";
-        cout << "  3. Laporan Keuangan\n";
+        cout << "  3. Keluar\n\n";
 
         cout << "  Pilih: ";
 
@@ -29,14 +29,14 @@ int main() {
         }
 
         switch (pilihan) {
-            case 1: menuPemasukan(dataPemasukan);                break;
-            case 2: menuPengeluaran(dataPengeluaran);            break;
+            case 1: menuPemasukan(dataPemasukan);     break;
+            case 2: menuPengeluaran(dataPengeluaran); break;
             case 3: break;
             default:
                 cout << "\n  Pilihan tidak valid.\n\n";
         }
 
-    } while (pilihan != 4);
+    } while (pilihan != 3);
 
     return 0;
 }
