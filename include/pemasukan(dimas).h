@@ -19,6 +19,7 @@ public:
 
     Pemasukan();
     void tambah(string keterangan, string hari, double jumlah);
+    NodePemasukan* getData();
 };
 
 void menuPemasukan(Pemasukan& dataPemasukan);

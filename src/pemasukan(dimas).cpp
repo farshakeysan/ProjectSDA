@@ -89,3 +89,7 @@ void menuPemasukan(Pemasukan& dataPemasukan) {
 
     } while (pilihan != 3);
 }
+
+NodePemasukan* Pemasukan::getData() {
+    return kepala;
+}
