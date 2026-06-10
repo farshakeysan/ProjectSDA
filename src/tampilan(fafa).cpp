@@ -52,28 +52,6 @@ void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
 
     cout << "\n";
 
-void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
-    cetakJudul("LAPORAN KEUANGAN");
-
-    cout << "  === PEMASUKAN ===\n";
-    if (dataPemasukan.jumlahData == 0) {
-        cout << "  Tidak ada data pemasukan.\n";
-    } else {
-        NodePemasukan* posisi = dataPemasukan.getData();
-        int no = 1;
-        while (posisi != nullptr) {
-            cout << "  " << no << ". "
-                << posisi->keterangan
-                << " | " << posisi->hari
-                << " | Rp " << (long long)posisi->jumlah << "\n";
-            posisi = posisi->berikutnya;
-            no++;
-        }
-        cout << "  Total : Rp " << (long long)dataPemasukan.totalJumlah << "\n";
-    }
-
-    cout << "\n";
-
     cout << "  === PENGELUARAN ===\n";
     if (dataPengeluaran.jumlahData == 0) {
         cout << "  Tidak ada data pengeluaran.\n";
