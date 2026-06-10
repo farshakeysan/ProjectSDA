@@ -1,6 +1,6 @@
-#include "tampilan(fafa).h"
-#include "pemasukan(dimas).h"
-#include "pengeluaran(key).h"
+#include "../include/tampilan(fafa).h"
+#include "../include/pemasukan(dimas).h"
+#include "../include/pengeluaran(key).h"
 #include <iostream>
 using namespace std;
 
@@ -16,7 +16,6 @@ int main() {
         cout << "  1. Pemasukan\n";
         cout << "  2. Pengeluaran\n";
         cout << "  3. Laporan Keuangan\n";
-        cout << "  4. Keluar\n\n";
 
         cout << "  Pilih: ";
 
@@ -32,8 +31,7 @@ int main() {
         switch (pilihan) {
             case 1: menuPemasukan(dataPemasukan);                break;
             case 2: menuPengeluaran(dataPengeluaran);            break;
-            case 3: menuLaporan(dataPemasukan, dataPengeluaran); break;
-            case 4: break;
+            case 3: break;
             default:
                 cout << "\n  Pilihan tidak valid.\n\n";
         }
