@@ -37,15 +37,39 @@ void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
     if (dataPemasukan.jumlahData == 0) {
         cout << "  Tidak ada data pemasukan.\n";
     } else {
-        for (int i = 0; i < dataPemasukan.jumlahData; i++) {
-            int no = i + 1;
-            string ket = dataPemasukan.data[i].keterangan;
-            string hr  = dataPemasukan.data[i].hari;
-            long long jml = (long long)dataPemasukan.data[i].jumlah;
-            cout << "  " << no << ". " << ket << " | " << hr << " | Rp " << jml << "\n";
+        NodePemasukan* posisi = dataPemasukan.getData();
+        int no = 1;
+        while (posisi != nullptr) {
+            cout << "  " << no << ". "
+                << posisi->keterangan
+                << " | " << posisi->hari
+                << " | Rp " << (long long)posisi->jumlah << "\n";
+            posisi = posisi->berikutnya;
+            no++;
         }
-        long long totalP = (long long)dataPemasukan.totalJumlah;
-        cout << "  Total : Rp " << totalP << "\n";
+        cout << "  Total : Rp " << (long long)dataPemasukan.totalJumlah << "\n";
+    }
+
+    cout << "\n";
+
+void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
+    cetakJudul("LAPORAN KEUANGAN");
+
+    cout << "  === PEMASUKAN ===\n";
+    if (dataPemasukan.jumlahData == 0) {
+        cout << "  Tidak ada data pemasukan.\n";
+    } else {
+        NodePemasukan* posisi = dataPemasukan.getData();
+        int no = 1;
+        while (posisi != nullptr) {
+            cout << "  " << no << ". "
+                << posisi->keterangan
+                << " | " << posisi->hari
+                << " | Rp " << (long long)posisi->jumlah << "\n";
+            posisi = posisi->berikutnya;
+            no++;
+        }
+        cout << "  Total : Rp " << (long long)dataPemasukan.totalJumlah << "\n";
     }
 
     cout << "\n";
@@ -61,8 +85,7 @@ void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
             long long jml = (long long)dataPengeluaran.data[i].jumlah;
             cout << "  " << no << ". " << ket << " | " << hr << " | Rp " << jml << "\n";
         }
-        long long totalK = (long long)dataPengeluaran.totalJumlah;
-        cout << "  Total : Rp " << totalK << "\n";
+        cout << "  Total : Rp " << (long long)dataPengeluaran.totalJumlah << "\n";
     }
 
     double selisih = dataPemasukan.totalJumlah - dataPengeluaran.totalJumlah;
