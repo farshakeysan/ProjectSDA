@@ -34,12 +34,13 @@ cd ProjectSDA
 
 ### 2. Kompilasi
 ```bash
-g++ main.cpp pemasukan.cpp pengeluaran.cpp tampilan.cpp -o keuangan
+g++ g++ main.cpp "pemasukan(dimas).cpp" "pengeluaran(key).cpp" "tampilan(fafa).cpp" -o keuangan
+
 ```
 
 ### 3. Jalankan
 ```bash
-./keuangan
+.\keuangan.exe
 ```
 
 ## Fitur
