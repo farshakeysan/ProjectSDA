@@ -33,7 +33,6 @@ int inputJumlah(double& hasil) {
 void menuLaporan(Pemasukan& dataPemasukan, Pengeluaran& dataPengeluaran) {
     cetakJudul("LAPORAN KEUANGAN");
 
-    // Struk Pemasukan
     cout << "  PEMASUKAN\n";
     cout << "  --------------------------------\n";
     if (dataPemasukan.jumlahData == 0) {
